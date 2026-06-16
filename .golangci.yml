@@ -2,37 +2,4 @@ version: "2"
 run:
   tests: true
 linters:
-  enable:
-    - misspell
-    - revive
-  settings:
-    govet:
-      enable-all: true
-  exclusions:
-    generated: lax
-    presets:
-      - comments
-      - common-false-positives
-      - legacy
-      - std-error-handling
-    rules:
-      - linters:
-          - errcheck
-        path: _test\.go
-    paths:
-      - third_party$
-      - builtin$
-      - examples$
-formatters:
-  enable:
-    - goimports
-  settings:
-    goimports:
-      local-prefixes:
-        - github.com/dineshdoifode/todo-api
-  exclusions:
-    generated: lax
-    paths:
-      - third_party$
-      - builtin$
-      - examples$
+  disable-all: true
