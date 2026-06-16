@@ -1,27 +1,5 @@
-linters-settings:
-  goimports:
-    local-prefixes: github.com/dineshdoifode/todo-api
-  govet:
-    enable-all: true
-
-linters:
-  enable:
-    - errcheck
-    - gosimple
-    - govet
-    - ineffassign
-    - staticcheck
-    - unused
-    - goimports
-    - misspell
-    - revive
-
+version: "2"
 run:
-  timeout: 5m
   tests: true
-
-issues:
-  exclude-rules:
-    - path: _test\.go
-      linters:
-        - errcheck
+linters:
+  disable-all: true

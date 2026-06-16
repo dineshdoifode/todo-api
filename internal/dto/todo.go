@@ -8,8 +8,8 @@ import (
 
 // CreateTodoRequest is the body accepted by POST /api/v1/todos.
 type CreateTodoRequest struct {
-	Task    string    `json:"task"`
 	DueDate time.Time `json:"due_date"`
+	Task    string    `json:"task"`
 }
 
 // UpdateTodoRequest is the body accepted by PUT /api/v1/todos/{id}.
@@ -22,12 +22,12 @@ type UpdateTodoRequest struct {
 
 // TodoResponse is returned for single-item endpoints.
 type TodoResponse struct {
-	ID        uuid.UUID `json:"id"`
-	Task      string    `json:"task"`
 	DueDate   time.Time `json:"due_date"`
-	Completed bool      `json:"completed"`
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
+	Task      string    `json:"task"`
+	ID        uuid.UUID `json:"id"`
+	Completed bool      `json:"completed"`
 }
 
 // ListTodosResponse is the envelope for the list endpoint.
@@ -38,16 +38,16 @@ type ListTodosResponse struct {
 
 // SuccessResponse wraps any successful payload.
 type SuccessResponse struct {
-	Success bool        `json:"success"`
-	Message string      `json:"message,omitempty"`
 	Data    interface{} `json:"data,omitempty"`
+	Message string      `json:"message,omitempty"`
+	Success bool        `json:"success"`
 }
 
 // ErrorResponse is returned on any API error.
 type ErrorResponse struct {
-	Success bool     `json:"success"`
 	Message string   `json:"message"`
 	Errors  []string `json:"errors,omitempty"`
+	Success bool     `json:"success"`
 }
 
 // ListFilter carries query-parameter filters for the list endpoint.
