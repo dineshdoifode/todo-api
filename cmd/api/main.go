@@ -96,12 +96,13 @@ func run() error {
 	}))
 
 	// Health check — useful for Docker/K8s liveness probes
-	r.Get("/health", func(w http.ResponseWriter, r *http.Request) {
+	r.Get("/health", func(w http.ResponseWriter, _ *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(http.StatusOK)
-		w.Write([]byte(`{"status":"ok"}`))
+		if _, err := w.Write([]byte(`{"status":"ok"}`)); err != nil {
+			log.Error("health check write failed", "error", err)
+		}
 	})
-
 	// API routes
 	todoHandler.RegisterRoutes(r)
 

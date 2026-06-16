@@ -8,9 +8,9 @@ import (
 
 // Config holds all application configuration loaded from environment variables.
 type Config struct {
-	Server   ServerConfig
 	Database DatabaseConfig
 	Log      LogConfig
+	Server   ServerConfig
 }
 
 // ServerConfig holds HTTP server settings.
