@@ -36,7 +36,6 @@ import (
 
 	"github.com/dineshdoifode/todo-api/internal/config"
 	"github.com/dineshdoifode/todo-api/internal/database"
-	_ "github.com/dineshdoifode/todo-api/internal/docs" // swagger generated docs
 	"github.com/dineshdoifode/todo-api/internal/handler"
 	"github.com/dineshdoifode/todo-api/internal/logger"
 	"github.com/dineshdoifode/todo-api/internal/middleware"
