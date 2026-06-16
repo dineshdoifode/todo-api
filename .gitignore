@@ -1,0 +1,24 @@
+# Binaries
+todo-api
+*.exe
+*.out
+
+# Environment
+.env
+!.env.example
+
+# Test artifacts
+coverage.out
+coverage.html
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker volumes
+postgres_data/
