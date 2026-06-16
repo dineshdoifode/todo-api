@@ -3,8 +3,8 @@ package service_test
 import (
 	"context"
 	"errors"
+	"io"
 	"log/slog"
-	"os"
 	"testing"
 	"time"
 
@@ -49,7 +49,7 @@ func (m *mockTodoRepo) Delete(ctx context.Context, id uuid.UUID) error {
 
 // ── Fixtures ───────────────────────────────────────────────────────────────
 
-func newLogger() *slog.Logger { return slog.New(slog.NewTextHandler(os.Discard, nil)) }
+func newLogger() *slog.Logger { return slog.New(slog.NewTextHandler(io.Discard, nil)) }
 
 func sampleTodo() *model.Todo {
 	return &model.Todo{

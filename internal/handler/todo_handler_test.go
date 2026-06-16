@@ -4,9 +4,9 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"io"
 	"net/http"
 	"net/http/httptest"
-	"os"
 	"testing"
 	"time"
 
@@ -63,7 +63,7 @@ func (m *mockTodoService) Delete(ctx context.Context, id string) error {
 
 // ── Fixtures ───────────────────────────────────────────────────────────────
 
-func newLogger() *slog.Logger { return slog.New(slog.NewTextHandler(os.Discard, nil)) }
+func newLogger() *slog.Logger { return slog.New(slog.NewTextHandler(io.Discard, nil)) }
 
 func sampleResponse() *dto.TodoResponse {
 	return &dto.TodoResponse{
